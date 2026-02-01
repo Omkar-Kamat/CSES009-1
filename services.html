@@ -16,47 +16,181 @@
     />
 </head>
 
-<body>
+<body class="sn-pro-font">
     <!-- NAVBAR -->
     <nav id="navbar">
         <div class="nav-left">
             <div id="nav-logo" class="dynapuff-font" onclick="link('index')">
                 Doggos
             </div>
-
             <button class="menu" onclick="menu()" aria-label="Toggle menu">
                 <img src="./assets/icons/menu.svg" alt="Menu" />
             </button>
         </div>
 
-        <div class="nav-right sn-pro-font" id="menu">
+        <div class="nav-right" id="menu">
             <div class="tab" onclick="link('services')">Services</div>
             <div class="tab" onclick="link('contact')">Contact</div>
             <div class="tab" onclick="link('about')">About</div>
         </div>
     </nav>
 
-    <!-- SERVICES HERO -->
-    <section class="page-hero sn-pro-font">
-        <div class="page-hero-content">
-            <h1>Our Services</h1>
+    <!-- HERO -->
+    <section class="section hero-lite">
+        <h1>Our Services</h1>
+        <p>
+            We don’t just help dogs find homes.  
+            We build a full-stack ecosystem around responsible pet care.
+        </p>
+    </section>
+
+    <!-- SERVICES GRID -->
+    <section class="services-grid">
+        <!-- Adoption -->
+        <div class="card service-card bg-adoption" onclick="link('adoption')">
+            <h2>Dog Adoption</h2>
+            <h3>Adopt With Confidence, Not Guesswork</h3>
             <p>
-                Adoption isn’t a transaction. It’s a commitment.
-                We help you do it right.
+                Every adoption is intentional. No impulse placements. No shady sourcing.
             </p>
+            <ul>
+                <li>Verified rescue partners only</li>
+                <li>Vet-checked, vaccinated dogs</li>
+                <li>Clear behavior & health profiles</li>
+                <li>Post-adoption support</li>
+            </ul>
+            <p class="service-fit">
+                <strong>Best for:</strong> People ready for a lifelong commitment.
+            </p>
+            <button class="btn">View Adoptable Dogs</button>
+        </div>
+
+        <!-- Foster -->
+        <div class="card service-card bg-foster" onclick="link('foster')">
+            <h2>Foster Care</h2>
+            <h3>Save Lives Without a Lifetime Commitment</h3>
+            <p>
+                Fostering keeps dogs out of shelters and gives them stability.
+            </p>
+            <ul>
+                <li>Short & long-term foster options</li>
+                <li>Food, medical support, guidance</li>
+                <li>Priority matching for adopters</li>
+            </ul>
+            <p class="service-fit">
+                <strong>Best for:</strong> Those who want impact without permanent adoption.
+            </p>
+            <button class="btn">Become a Foster</button>
+        </div>
+
+        <!-- Grooming -->
+        <div class="card service-card bg-grooming" onclick="link('grooming')">
+            <h2>Professional Grooming</h2>
+            <h3>Clean Dogs Are Happy Dogs</h3>
+            <p>Grooming isn’t cosmetic. It’s health maintenance.</p>
+            <ul>
+                <li>Bathing & coat care</li>
+                <li>Nail trimming & ear cleaning</li>
+                <li>Breed-specific grooming</li>
+                <li>Skin & coat health checks</li>
+            </ul>
+            <p class="service-fit">
+                <strong>Best for:</strong> Adopted, foster, and community dogs.
+            </p>
+            <button class="btn">Book Grooming</button>
+        </div>
+
+        <!-- Vet -->
+        <div class="card service-card bg-vet" onclick="link('vet')">
+            <h2>Vet Check-Ups & Medical Care</h2>
+            <h3>Health First. Always.</h3>
+            <p>
+                Preventive care beats emergency fixes.
+            </p>
+            <ul>
+                <li>Pre-adoption health screening</li>
+                <li>Vaccinations & deworming</li>
+                <li>Spay/neuter coordination</li>
+                <li>Routine check-ups</li>
+            </ul>
+            <p class="service-fit">
+                Partnered with licensed veterinary clinics only.
+            </p>
+            <button class="btn">Schedule Vet Visit</button>
+        </div>
+
+        <!-- Shop -->
+        <div class="card service-card bg-shop" onclick="link('shop')">
+            <h2>Toys & Accessories</h2>
+            <h3>Play With Purpose</h3>
+            <p>
+                We curate products that are safe, durable, and dog-approved.
+            </p>
+            <ul>
+                <li>Chew-safe toys</li>
+                <li>Leashes, collars & harnesses</li>
+                <li>Beds, bowls & travel gear</li>
+                <li>Training essentials</li>
+            </ul>
+            <p class="service-fit">
+                Bad toys injure dogs. We don’t sell junk.
+            </p>
+            <button class="btn">Shop Essentials</button>
         </div>
     </section>
 
-    <!-- PAGE CONTENT -->
-    <main class="page-content sn-pro-font">
-        <p>Coming soon.</p>
-    </main>
+    <!-- ECOSYSTEM SERVICES -->
+    <section class="section card">
+        <h2>More Than a Platform: An Ecosystem</h2>
+        <ul class="checklist">
+            <li><strong>Behavior & Training Support</strong>: obedience, adjustment, trainer referrals</li>
+            <li><strong>Adoption Counseling</strong>: lifestyle matching & first-time guidance</li>
+            <li><strong>Community & Education</strong>: outreach, events, awareness programs</li>
+        </ul>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4>Company</h4>
+                <span onclick="link('about')">About Us</span>
+                <span>Our Mission</span>
+                <span>Partners</span>
+                <span>Careers</span>
+            </div>
+
+            <div>
+                <h4>Services</h4>
+                <span onclick="link('adoption')">Adoption</span>
+                <span onclick="link('foster')">Foster</span>
+                <span onclick="link('grooming')">Grooming</span>
+                <span onclick="link('vet')">Vet Care</span>
+                <span onclick="link('shop')">Shop</span>
+            </div>
+
+            <div>
+                <h4>Support</h4>
+                <span>Adoption Process</span>
+                <span>FAQs</span>
+                <span onclick="link('contact')">Contact Us</span>
+                <span>Report an Animal in Need</span>
+            </div>
+
+            <div>
+                <h4>Legal</h4>
+                <span>Terms & Conditions</span>
+                <span>Privacy Policy</span>
+                <span>Adoption Agreement</span>
+            </div>
+        </div>
+    </footer>
 
     <!-- THEME TOGGLE -->
     <button id="theme-change" onclick="themeChange()" aria-label="Change theme">
         <img src="./assets/icons/edit-contrast.svg" alt="Theme toggle" />
     </button>
-
+    
     <script src="./script.js"></script>
 </body>
 </html>
