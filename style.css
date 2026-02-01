@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================
+   RESET
+   ========================= */
 * {
     box-sizing: border-box;
 }
@@ -7,7 +9,19 @@ body {
     margin: 0;
 }
 
-/* FONTS */
+/* =========================
+   DESIGN TOKENS
+   ========================= */
+:root {
+    --radius-lg: 1rem;
+    --shadow-sm: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    --overlay-dark: rgba(0, 0, 0, 0.55);
+}
+
+/* =========================
+   FONTS
+   ========================= */
 .dynapuff-font {
     font-family: "DynaPuff", system-ui;
     font-weight: 800;
@@ -18,13 +32,15 @@ body {
     font-weight: 500;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+   ========================= */
 #navbar {
     position: sticky;
     top: 0;
     z-index: 10;
     background: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-sm);
 }
 
 .nav-left {
@@ -63,7 +79,9 @@ body {
     cursor: pointer;
 }
 
-/* HERO */
+/* =========================
+   HERO
+   ========================= */
 .hero {
     position: relative;
     height: calc(100vh - 80px);
@@ -80,7 +98,6 @@ body {
     object-fit: cover;
 }
 
-
 .hero-content {
     position: absolute;
     inset: 0;
@@ -95,7 +112,7 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
 }
 
@@ -114,7 +131,9 @@ body {
     opacity: 0.9;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+   ========================= */
 .section {
     width: 90%;
     max-width: 1100px;
@@ -123,16 +142,17 @@ body {
     text-align: center;
 }
 
-
-/* CARDS */
+/* =========================
+   CARDS (BASE)
+   ========================= */
 .card {
-    box-shadow: 0px 2px 5px black;
-    border-radius: 1rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
 }
 
-
-
-/* LISTS */
+/* =========================
+   LISTS
+   ========================= */
 .checklist {
     list-style: none;
     padding: 0;
@@ -143,7 +163,9 @@ body {
     margin: 0.5rem 0;
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTONS
+   ========================= */
 .btn {
     font-size: 1.3rem;
     font-weight: 600;
@@ -152,9 +174,120 @@ body {
     border: none;
     background: #fff;
     cursor: pointer;
+    box-shadow: var(--shadow-sm);
 }
 
-/* THEME TOGGLE */
+/* =========================
+   SERVICES GRID
+   ========================= */
+.services-grid {
+    display: grid;
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+/* =========================
+   SERVICE CARDS
+   ========================= */
+.service-card {
+    position: relative;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    text-align: left;
+    color: #fff;
+    cursor: pointer;
+
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+    /* BASE SIZE — SAME ACROSS ALL BREAKPOINTS */
+    min-height: 420px;
+}
+
+/* Overlay */
+.service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--overlay-dark);
+    z-index: 0;
+}
+
+/* Content above overlay */
+.service-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.service-card h2 {
+    margin-bottom: 0.3rem;
+}
+
+.service-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.service-card p {
+    margin-bottom: 1rem;
+}
+
+.service-card ul {
+    padding-left: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.service-card li {
+    margin-bottom: 0.4rem;
+}
+
+.service-fit {
+    font-size: 0.95rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.service-card .btn {
+    align-self: flex-start;
+    background: #fff;
+    color: #000;
+}
+
+/* =========================
+   SERVICE BACKGROUNDS
+   ========================= */
+.bg-adoption {
+    background-image: url("./assets/images/service-adoption.jpg");
+}
+
+.bg-foster {
+    background-image: url("./assets/images/service-foster.jpg");
+}
+
+.bg-grooming {
+    background-image: url("./assets/images/service-grooming.jpg");
+}
+
+.bg-vet {
+    background-image: url("./assets/images/service-vet.jpg");
+}
+
+.bg-shop {
+    background-image: url("./assets/images/service-shop.jpg");
+}
+
+/* =========================
+   THEME TOGGLE
+   ========================= */
 #theme-change {
     position: fixed;
     bottom: 1rem;
@@ -163,7 +296,7 @@ body {
     border: none;
     padding: 0.5rem;
     border-radius: 0 1rem 1rem 0;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-sm);
     cursor: pointer;
 }
 
@@ -172,43 +305,38 @@ body {
     height: 3rem;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
 .footer {
-    box-shadow: 0px 2px 5px black;
-    margin-top: 3rem;
-    padding: 2rem 1rem;
-    background: #ebebeb;
+    background: #eee;
+    padding: 3rem 1rem;
 }
 
-.footer-content {
-    max-width: 900px;
+.footer-grid {
+    width: 90%;
     margin: auto;
-    text-align: center;
-}
-
-.footer-messages p {
-    margin: 0.4rem 0;
-    font-size: 0.95rem;
-}
-
-.footer-links {
-    margin-top: 1.2rem;
-    display: flex;
-    justify-content: center;
+    display: grid;
     gap: 2rem;
-    font-weight: 600;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-.footer-links span {
-    cursor: pointer;
+.footer-card {
+    padding: 1.5rem;
 }
 
+/* =========================
+   BREAKPOINTS
+   ========================= */
 
-
-.hero-content h1 {
-    font-size: 2.2rem;
+/* Mobile: 0–480px */
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Tablet: 481–768px */
 @media (min-width: 481px) and (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.6rem;
@@ -217,8 +345,13 @@ body {
     .section {
         padding: 2.5rem 2rem;
     }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
+/* Laptop: 769–1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .hero-content h1 {
         font-size: 3rem;
@@ -227,8 +360,13 @@ body {
     .hero-actions {
         gap: 2rem;
     }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
+/* Desktop: 1025px+ */
 @media (min-width: 1025px) {
     .hero-content h1 {
         font-size: 3.5rem;
@@ -236,5 +374,9 @@ body {
 
     .section {
         padding: 3rem;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
