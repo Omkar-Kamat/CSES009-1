@@ -1,40 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-        <link href="./style.css" rel="stylesheet">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doggos | Adopt Love</title>
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=SN+Pro:wght@200..900&display=swap"
+        rel="stylesheet"
+    />
+</head>
+
+<body class="sn-pro-font">
+    <!-- NAVBAR -->
     <nav id="navbar">
-        <div id="nav-logo" onclick="link('index')" class="dynapuff-font ">
-            Rythm
+        <div class="nav-left">
+            <div id="nav-logo" class="dynapuff-font" onclick="link('index')">
+                Doggos
+            </div>
+
+            <button class="menu" onclick="menu()" aria-label="Toggle menu">
+                <img src="./assets/icons/menu.svg" alt="Menu" />
+            </button>
         </div>
-        <div class="tabs sn-pro-font" onclick="link('services')">
-            Services
-        </div>
-        <div class="tabs sn-pro-font" onclick="link('contact')">
-            Contact
-        </div>
-        <div class="tabs sn-pro-font" onclick="link('about')">
-            About
+
+        <div class="nav-right" id="menu">
+            <div class="tab" onclick="link('services')">Services</div>
+            <div class="tab" onclick="link('contact')">Contact</div>
+            <div class="tab" onclick="link('about')">About</div>
         </div>
     </nav>
 
-    <section>
-        <img src="./assets/images/home-mobile.jpg" id="bg-image">
-        <div class="homepage">
-            hello
+    <!-- HERO -->
+    <section class="hero">
+        <picture>
+            <!-- Desktop -->
+            <source 
+                media="(min-width: 1025px)" 
+                srcset="./assets/images/hero-desktop.jpg">
+
+            <!-- Laptop -->
+            <source 
+                media="(min-width: 769px) and (max-width: 1024px)" 
+                srcset="./assets/images/hero-laptop.jpg">
+
+            <!-- Tablet -->
+            <source 
+                media="(min-width: 481px) and (max-width: 768px)" 
+                srcset="./assets/images/hero-tablet.jpg">
+
+            <!-- Mobile (fallback) -->
+            <img 
+                src="./assets/images/hero-mobile.jpg"
+                alt="Happy dog looking for a home" />
+        </picture>
+
+
+        <div class="hero-content">
+            <h1>Adopt Love. Change a Life.</h1>
+
+            <p class="hero-text">
+                Every dog deserves a home. We connect rescued dogs with humans
+                who are ready to show up—for real.
+            </p>
+
+            <div class="hero-actions">
+                <button class="btn" onclick="link('services')">Adopt</button>
+                <button class="btn" onclick="link('services')">Foster</button>
+            </div>
+
+            <p class="hero-footnote">
+                No breeders. No buying. Just second chances done right.
+            </p>
         </div>
     </section>
 
-    <div id="theme-change" onclick="themeChange()">
-        <img src="./assets/icons/edit-contrast.svg" alt="Theme">
-    </div>
+    <!-- TRUST -->
+    <section class="section card">
+        <h2>Trust</h2>
+        <ul class="checklist">
+            <li>Vet-checked dogs</li>
+            <li>Ethical rescues only</li>
+            <li>Transparent adoption process</li>
+            <li>Support before & after adoption</li>
+        </ul>
+    </section>
+
+    <!-- INFO SECTIONS -->
+    <section class="section card">
+        <h2>We Make Dog Adoption Simple, Ethical, and Human</h2>
+        <p>
+            Dog adoption is broken—too slow, too opaque, too emotional without structure.
+            We partner with verified rescues, match dogs with compatible humans,
+            and support adopters even after adoption.
+        </p>
+    </section>
+
+    <section class="section card">
+        <h2>Meet Your Future Best Friend</h2>
+        <p>
+            Each dog here has a story. You could be the next chapter.
+            Browse real profiles with personality, lifestyle fit, and transparency.
+        </p>
+    </section>
+
+    <section class="section card">
+        <h2>Adoption, Without the Runaround</h2>
+        <p>
+            No paperwork chaos. No ghosting. No guilt pressure.
+            Apply online, meet responsibly, adopt with confidence.
+        </p>
+    </section>
+
+    <section class="section card">
+        <h2>Why Adopt?</h2>
+        <p>
+            Every adoption saves two lives—the dog you take home
+            and the one who gets space next.
+        </p>
+    </section>
+
+        <!-- FOOTER -->
+    <footer class="footer sn-pro-font">
+        <div class="footer-content">
+            <div class="footer-messages">
+                <p>Ethical adoption only</p>
+                <p>Partnered with verified shelters</p>
+                <p>Built by people who actually care about dogs</p>
+            </div>
+
+            <div class="footer-links">
+                <span onclick="link('about')">About Us</span>
+                <span onclick="link('contact')">Contact</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- THEME TOGGLE -->
+    <button id="theme-change" onclick="themeChange()" aria-label="Change theme">
+        <img src="./assets/icons/edit-contrast.svg" alt="Theme toggle" />
+    </button>
+
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>

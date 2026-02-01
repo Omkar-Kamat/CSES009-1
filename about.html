@@ -1,40 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-        <link href="./style.css" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doggos | About</title>
 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=SN+Pro:wght@200..900&display=swap"
+        rel="stylesheet"
+    />
 </head>
+
 <body>
+    <!-- NAVBAR -->
     <nav id="navbar">
-        <div id="nav-logo" onclick="link('index')" class="dynapuff-font ">
-            Rythm
+        <div class="nav-left">
+            <div id="nav-logo" class="dynapuff-font" onclick="link('index')">
+                Doggos
+            </div>
+
+            <button class="menu" onclick="menu()" aria-label="Toggle menu">
+                <img src="./assets/icons/menu.svg" alt="Menu" />
+            </button>
         </div>
-        <div class="tabs sn-pro-font" onclick="link('services')">
-            Services
-        </div>
-        <div class="tabs sn-pro-font" onclick="link('contact')">
-            Contact
-        </div>
-        <div class="tabs sn-pro-font" onclick="link('about')">
-            About
+
+        <div class="nav-right sn-pro-font" id="menu">
+            <div class="tab" onclick="link('services')">Services</div>
+            <div class="tab" onclick="link('contact')">Contact</div>
+            <div class="tab" onclick="link('about')">About</div>
         </div>
     </nav>
-    <section>
-        <img src="./assets/images/home-mobile.jpg" id="bg-image">
-        <div class="homepage">
-            hello
+
+    <!-- ABOUT HERO -->
+    <section class="page-hero sn-pro-font">
+        <div class="page-hero-content">
+            <h1>Why We Exist</h1>
+            <p>
+                Doggos was built to give abandoned dogs a second chance—
+                and humans a better first choice.
+            </p>
         </div>
     </section>
 
-    <div id="theme-change" onclick="themeChange()">
-        <img src="./assets/icons/edit-contrast.svg" alt="Theme">
-    </div>
+    <!-- ABOUT CONTENT -->
+    <main class="page-content sn-pro-font">
+        <p>
+            We are a rescue-first adoption platform.
+            No breeders. No shortcuts. No excuses.
+        </p>
+
+        <p>
+            Every dog you see here has been rescued, vetted,
+            and matched with people who are ready to commit—
+            not impulse-buy.
+        </p>
+    </main>
+
+    <!-- THEME TOGGLE -->
+    <button id="theme-change" onclick="themeChange()" aria-label="Change theme">
+        <img src="./assets/icons/edit-contrast.svg" alt="Theme toggle" />
+    </button>
+
+    <script src="./script.js"></script>
 </body>
-<script src="./script.js"></script>
 </html>
